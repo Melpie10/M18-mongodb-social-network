@@ -3,24 +3,25 @@ const { Schema, model } = require('mongoose');
 const UserSchema = new Schema(
   {
     userName: {
-      type: String
-    },
-    createdBy: {
-      type: String
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-    size: {
       type: String,
-      default: 'Large'
+      required: true,
+      trim: true,
+      unique: true
     },
-    toppings: [],
+    email: {
+      type: String,
+      required: true
+    },
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'thought'
+      }
+    ]
     friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Comment'
+        ref: 'User'
       }
     ]
   },
