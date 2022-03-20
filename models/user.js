@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+// const dateFormat = require('../utils/dateFormat');
 
 const UserSchema = new Schema(
   {
@@ -34,6 +35,12 @@ const UserSchema = new Schema(
 );
 
 // get total count of friends and replies on retrieval
+// AM I MISSING SOMETHING HERE??????????????????????????????
+// the module has it like this: 
+//  PizzaSchema.virtual('commentCount').get(function() {
+//  return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
+//  });
+
 UserSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
