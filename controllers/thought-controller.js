@@ -51,7 +51,9 @@ const thoughtController = {
 
   // get one Thought by id
   getThoughtById({ params }, res) {
-    Thought.findOne({ _id: params.id })
+
+    console.log('params.id',params.thoughtId );
+    Thought.findOne({ _id: params.thoughtId })
       .then(dbThoughtData => {
         // If no Thought is found, send 404
         if (!dbThoughtData) {
@@ -90,9 +92,11 @@ const thoughtController = {
 
   // add reaction to thought
   addReaction({ params, body }, res) {
+
+
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
-      { $push: { replies: body } },
+      { $push: { reactions: body } },
       { new: true, runValidators: true }
     )
       .then(dbUserData => {
@@ -129,9 +133,9 @@ const thoughtController = {
   },
   // remove reaction
   removeReaction({ params }, res) {
-    Thought.findOneAndUpdate(
+    Thought.findOneAndDelete(
       { _id: params.thoughtId },
-      { $pull: { replies: { reactionId: params.reactionId } } },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
       { new: true }
     )
       .then(dbUserData => res.json(dbUserData))

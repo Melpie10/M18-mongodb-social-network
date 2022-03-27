@@ -73,4 +73,11 @@ deleteUser({ params }, res) {
   }
 }
 
+// add friend
+addFriend ({params }, res ) {
+  
+  Thought.findOneAndUpdate(
+    { $push: { reactions: body } },
+
+
 module.exports = userController;
