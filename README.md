@@ -28,7 +28,11 @@ https://github.com/Melpie10/M18-mongodb-social-network
 
  ## Visuals
 
-Mockup Videos coming soon since this is not a deployed application. 
+Mockup Videos found here:  
+
+1. All user routes : https://drive.google.com/file/d/1d6XJu7KnjZOYOlDXyh14IBwCFzL-IzQp/view
+2. All thought routes: https://drive.google.com/file/d/12MVZ2ciR1wMTSpTvyQE7YauOiWOSJIAv/view
+3. Friends and reactions routes: https://drive.google.com/file/d/1UBHX97J7igNB518pgtilHRBdvAOzRsDT/view
 
 ## Contributing
 
